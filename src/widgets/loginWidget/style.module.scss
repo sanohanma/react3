@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.form {
+  font-family: 'Inter';
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .googleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+.modalWidget {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-in-out;
+
+    .modalContent {
+      position: relative;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        color: #333;
+
+        &.error {
+          color: #e74c3c;
+        }
+
+        &.success {
+          color: #2ecc71;
+        }
+      }
+
+      .closeButton {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      .logoutButton {
+        margin-top: 15px;
+      }
+
+      .closeButtonX {
+        width: 30px;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Анимация появления
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
